@@ -1,0 +1,18 @@
+----------------------------------
+---Discord Rich Presence FIVEM
+----------------------------------
+Citizen.CreateThread(function()
+    while true do
+        Citizen.Wait(10000)
+        players = {}
+        for i = 0,256 do
+            if NetworkIsPlayerActive(i) then
+                table.insert(players,i)
+            end
+        end
+        SetDiscordAppId(744667673681723492) -- Crie um app no discord com o nome do server copie o id e cole.
+		SetDiscordRichPresenceAssetText('Marsh Resources -- https://discord.gg/seuserver') -- Nome e discord do server
+        SetDiscordRichPresenceAsset('logo')
+        SetRichPresence("Moradores: +1500")
+    end
+end)
